@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageDeportesModule } from './page-deportes/page-deportes.module';
+ import { MuseumsModule } from './page-museum/museums/museums.module';
+import { PageMuseumModule } from './page-museum/page-museum.module';
 
 const routes: Routes = 
 [
@@ -11,7 +13,12 @@ const routes: Routes =
    {
     path: 'page-deportes',
     loadChildren: () => import('./page-deportes/page-deportes.module').then(m => PageDeportesModule)
-  }
+  },
+     {
+  path:'page-museum',
+  loadChildren: ()=> import('./page-museum/page-museum.module').then(m=>PageMuseumModule)
+},
+
 ];
 
 @NgModule({
