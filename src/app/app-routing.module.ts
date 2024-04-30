@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageDeportesModule } from './page-deportes/page-deportes.module';
 
 const routes: Routes = 
 [
@@ -7,6 +8,10 @@ const routes: Routes =
     path:'music',
     loadChildren: () => import('./page-music/page-music.module').then(m => m.PageMusicModule)
   },
+   {
+    path: 'page-deportes',
+    loadChildren: () => import('./page-deportes/page-deportes.module').then(m => PageDeportesModule)
+  }
 ];
 
 @NgModule({
