@@ -1,10 +1,15 @@
 <!-- app.component.html -->
 
-<div>
-  <h1>Detalles de la concecionaria</h1>
-  <p>Concecionaria: {{ concecionaria.describirVehiculo() }}</p>
-  <p>Impuesto: {{ concecionaria.calcularImpuesto() }}</p>
-</div>
+
+<nav>
+  <ul>
+    <li><a routerLink="/concesionaria">Concesionaria</a></li>
+    <li><a routerLink="/vehiculos">Vehículos</a></li>
+    <li><a routerLink="/motos">Motos</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
 
 
 
