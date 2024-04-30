@@ -18,7 +18,7 @@ const routes: Routes =
   path:'page-museum',
   loadChildren: ()=> import('./page-museum/page-museum.module').then(m=>PageMuseumModule)
 },
-
+   { path: 'gamehub', loadChildren:() => import('./gamehub/gamehub.module').then(m => m.GamehubModule), }
 ];
 
 @NgModule({
