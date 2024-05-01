@@ -6,29 +6,52 @@
 <div class="container">
     <div class = "row">
         <div>
-            <form action="#">
+            <form [formGroup]="sugerencia">
                 <div class="form-group">
-                  <label for="nombre">Usuario: </label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                  <label for="usuario">Usuario: </label>
+                  <input type="text" class="form-control" formControlName="usuario" placeholder="Ingresa tu nombre">
+                  @if(this.sugerencia.controls['usuario'].hasError('required') && this.sugerencia.controls['usuario'].touched){
+                    <small class="alert-validation" style="color: red;">Este campo es requerido</small>
+                  }
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="correo">Titulo :</label>
-                  <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo electrónico">
+                  <input type="email" class="form-control" formControlName="correo" placeholder="Ingresa tu correo electrónico">
+                  @if(this.sugerencia.controls['correo'].hasError('required') && this.sugerencia.controls['correo'].touched){
+                    <small class="alert-validation" style="color: red">Este campo es requerido</small>
+                  }
                 </div>
                 <br>
                 <div class="form-group">
-                  <label for="asunto">Descripcion: </label>
-                  <input type="text" class="form-control" id="asunto" placeholder="Ingresa el asunto de tu mensaje">
+                  <label for="date">Fecha: </label>
+                  <input type="datetime-local" class="form-control" formControlName="date">
+                  @if(this.sugerencia.controls['date'].hasError('required') && this.sugerencia.controls['date'].touched){
+                    <small class="alert-validation" style="color: red;">Este campo es requerido</small>
+                  }
                 </div>
-                <br>          
+                <br>
                 <div class="form-group">
-                  <label for="mensaje">Estado</label>
-                  <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje"></textarea>
+                <label for="valoracion">Valoración: </label>
+                  <select class="form-select" aria-label="Default select example" formControlName="valoracion">
+                    <option value="1" style="color: green">Aprobado</option>
+                    <option value="3" style="color: red">Denegado</option>
+                  </select>
+                @if(this.sugerencia.controls['valoracion'].hasError('required') && this.sugerencia.controls['valoracion'].touched){
+                  <small class="alert-validation" style="color: red;">Este campo es requerido</small>
+                }
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="mensaje">Estado:</label>
+                  <input  type="number" class="form-control" formControlName="estado" placeholder="Escribe tu mensaje">
+                  @if(this.sugerencia.controls['estado'].hasError('required') && this.sugerencia.controls['estado'].touched){
+                    <small class="alert-validation" style="color: red;">Este campo es requerido</small>
+                  }
                 </div>
                 <br>
                 <div class="button">
-                    <button type="submit" class="btn btn-primary">Enviar</button>   
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
               </form>
             </div>
