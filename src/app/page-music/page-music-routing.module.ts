@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = 
 [
   {
-    path:'pages-music',
+    path:'pagesMusic',
     loadChildren: () => import('./music/music.module').then(m => m.MusicModule)
 
   }

@@ -18,11 +18,23 @@
       </div>
   
       <div class="table-data container col-md-6" style="margin-top: 40px;">
-        <form class="row shadow p-3 mb-5 bg-body-tertiary rounded">
-          <div class="col-6 me-auto" style="margin-top: 20px">
-            <label for="nombre" class="form-label">Nombre de mi playlist</label>
-            <input type="text" id="nombre" class="form-control" formControlName="nombre" />
+        <form class="row shadow p-3 mb-5 bg-body-tertiary rounded" [formGroup]="form">
+          <div class="col-12 me-auto" style="margin-top: 20px">
+
+            <label for="name" class="form-label">Nombre de mi playlist</label>
+            <input type="text" id="name" formControlName="name" class="form-control"/>
   
+          </div>
+
+          <div  style="margin-top: 5px;">
+            <label >
+              <input type="checkbox" formControlName="esSingle"> ¿Es un sencillo?
+            </label>
+          </div>
+
+          <div class="col-6 me-auto" style="margin-top: 20px">
+            <label for="date" class="form-label">Fecha</label>
+            <input type="date" id="date" class="form-control" formControlName="date" />
           </div>
   
           <div class="col-6 me-auto" style="margin-top: 20px">
@@ -34,7 +46,11 @@
           <div class="col-6 me-auto" style="margin-top: 20px">
             <label for="descripcion" class="form-label">Descripcion</label>
             <input type="text" id="descripcion" class="form-control" formControlName="descripcion" />
-  
+          </div>
+
+          <div class="col-6 me-auto" style="margin-top: 20px">
+            <label for="num" class="form-label">Numero</label>
+            <input type="number" id="num" class="form-control" formControlName="num" />
           </div>
   
           <div class="col-6 me-auto" style="margin-top: 20px">
@@ -49,7 +65,7 @@
   
         
           <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 30px;">
-            <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+            <button type="submit" class="btn btn-success btn-lg" (click)="validateForm()">Agregar</button>
           </div>
         </form>
       </div>
