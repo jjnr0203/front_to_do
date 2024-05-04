@@ -12,7 +12,7 @@ import { PageVehiculosComponent } from './page-vehiculos/page-vehiculos.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
