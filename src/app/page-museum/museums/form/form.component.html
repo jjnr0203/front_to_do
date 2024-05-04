@@ -5,27 +5,50 @@
     <form [formGroup]="form">
       <div class="form-group p-2">
         <label for="name">Nombre:</label>
-        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre">
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre" maxlength="10">
+        @if (this.form.controls['name'].hasError('required') && this.form.controls['name'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        }
       </div>
       <div class="form-group p-2">
         <label for="lastname">Apellido:</label>
-        <input type="text" class="form-control"  id="lastname" formControlName="lastname" placeholder="Ingrese su apellido">
+        <input type="text" class="form-control"  id="lastname" formControlName="lastname" placeholder="Ingrese su apellido" maxlength="10">
+        @if (this.form.controls['lastname'].hasError('required')&& this.form.controls['lastname'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>}
       </div>
       <div class="form-group p-2">
         <label for="numberofrooms">Numero de salas:</label>
         <input type="number" class="form-control" id="numberofrooms" formControlName="numberofrooms">
+        @if (this.form.controls['numberofrooms'].hasError('required')&& this.form.controls['numberofrooms'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        }
       </div>
       <div class="form-group p-2">
         <label for="years">Año de Fundacion:</label>
         <input type="date" class="form-control" id="years" formControlName="years">
+        @if (this.form.controls['years'].hasError('required')&& this.form.controls['years'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        }
       </div>
-      <div class="form-group p-2">
-        <label for="petfriendly">Pet Friendly?</label>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="petfriendly" formControlName="petfriendly">
-          <label class="form-check-label" for="petfriendly">Sí</label>
-        </div>
+      <div class="form-group">
+        <label for="">Pet Friendly?</label>
+        <br>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="petfriendly">
+        <label class="form-check-label" for="flexCheckDefault">
+          Si
+        </label>
       </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="petfriendly">
+        <label class="form-check-label" for="flexCheckChecked">
+          No
+        </label>
+      </div>
+      @if (this.form.controls['petfriendly'].hasError('required') && this.form.controls['petfriendly'].touched) {
+        <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+      }
+    </div>
       <div class="d-flex justify-content-center pt-4">
         <button type="button" (click)="validateForm()" class="btn btn-primary">Registrar</button>
       </div>

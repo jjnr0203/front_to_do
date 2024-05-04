@@ -15,11 +15,11 @@ export class FormComponent {
 
   constructor(){
 this.form = this.formBuilder.group({
-  name: ['', [Validators.required, Validators.maxLength(10)]],
-  lastname: ['',[Validators.required]],
-  numberofrooms:[0],
-  years:[''],
-  petfriendly:[false]
+  name: [null, [Validators.required]],
+  lastname: [null,[Validators.required]],
+  numberofrooms:[null,Validators.required],
+  years:[null,Validators.required],
+  petfriendly:[null,Validators.required]
 
   }); 
   }
