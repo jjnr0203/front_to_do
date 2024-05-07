@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PageVehiculosComponent } from './page-vehiculos.component';
 
 describe('PageVehiculosComponent', () => {
@@ -11,7 +10,7 @@ describe('PageVehiculosComponent', () => {
       declarations: [PageVehiculosComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PageVehiculosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
