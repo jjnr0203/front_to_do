@@ -1,40 +1,57 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<div class="col-6 position-absolute top-50 start-50 translate-middle" >
-    <div class="border border-dark-subtle p-4 rounded-4">
-      <h2 class="mt-4 mb-4">Registro de Museos</h2>
-      <form>
-        <div class="form-group p-2">
-          <label for="nombre">Nombre:</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-        </div>
-        <div class="form-group p-2">
-          <label for="apellido">Apellido:</label>
-          <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
-        </div>
-        <div class="form-group p-2">
-          <label for="email">Correo Electrónico:</label>
-          <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
-        </div>
-        <div class="form-group p-2">
-          <label for="telefono">Teléfono:</label>
-          <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su número de teléfono">
-        </div>
-        <div class="form-group p-2">
-          <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-          <input type="date" class="form-control" id="fechaNacimiento">
-        </div>
-        <div class="form-group p-2">
-          <label for="genero">Género:</label>
-          <select class="form-control" id="genero">
-            <option value="">Seleccionar</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-        <div class="d-flex justify-content-center pt-4">
-          <button type="submit" class="btn btn-primary">Registrar</button>
-        </div>
-      </form>
+<div class="col-6 position-absolute top-50 start-50 translate-middle">
+  <div class="border border-dark-subtle p-4 rounded-4">
+    <h2 class="mt-4 mb-4">Registro de Museos </h2>
+    <form [formgroup="form"]>
+      <div class="form-group p-2">
+        <label for="name">Nombre:</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre" maxlength="10">
+        @if (this.form.controls['name'].hasError('required') && this.form.controls['name'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        }
+      </div>
+      <div class="form-group p-2">
+        <label for="lastname">Apellido:</label>
+        <input type="text" class="form-control"  id="lastname" formControlName="lastname" placeholder="Ingrese su apellido" maxlength="10">
+        @if (this.form.controls['lastname'].hasError('required')&& this.form.controls['lastname'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>}
+      </div>
+      <div class="form-group p-2">
+        <label for="numberofrooms">Numero de salas:</label>
+        <input type="number" class="form-control" id="numberofrooms" formControlName="numberofrooms">
+        @if (this.form.controls['numberofrooms'].hasError('required')&& this.form.controls['numberofrooms'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        }
+      </div>
+      <div class="form-group p-2">
+        <label for="years">Año de Fundacion:</label>
+        <input type="date" class="form-control" id="years" formControlName="years">
+        @if (this.form.controls['years'].hasError('required')&& this.form.controls['years'].touched) {
+          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        }
+      </div>
+      <div class="form-group">
+        <label for="">Pet Friendly?</label>
+        <br>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="petfriendly">
+        <label class="form-check-label" for="flexCheckDefault">
+          Si
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="petfriendly">
+        <label class="form-check-label" for="flexCheckChecked">
+          No
+        </label>
+      </div>
+      @if (this.form.controls['petfriendly'].hasError('required') && this.form.controls['petfriendly'].touched) {
+        <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+      }
     </div>
+      <div class="d-flex justify-content-center pt-4">
+        <button type="button" (click)="validateForm()" class="btn btn-primary">Registrar</button>
+      </div>
+    </form>
   </div>
+</div>
