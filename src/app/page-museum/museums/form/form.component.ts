@@ -1,9 +1,6 @@
 import { IfStmt } from '@angular/compiler';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { __values } from 'tslib';
-import { Component, inject} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
