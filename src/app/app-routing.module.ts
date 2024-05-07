@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageDeportesModule } from './page-deportes/page-deportes.module';
- import { MuseumsModule } from './page-museum/museums/museums.module';
 import { PageMuseumModule } from './page-museum/page-museum.module';
 
 const routes: Routes = 
