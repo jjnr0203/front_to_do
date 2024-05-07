@@ -2,7 +2,8 @@
 <div class="col-6 position-absolute top-50 start-50 translate-middle">
   <div class="border border-dark-subtle p-4 rounded-4">
     <h2 class="mt-4 mb-4">Registro de Museos </h2>
-    <form [formgroup="form"]>
+
+    <form [formGroup]="form">
       <div class="form-group p-2">
         <label for="name">Nombre:</label>
         <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre" maxlength="10">
