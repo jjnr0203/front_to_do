@@ -2,13 +2,16 @@ import { IfStmt } from '@angular/compiler';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { __values } from 'tslib';
+import { Component, inject} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
+
   private formBuilder:FormBuilder = inject(FormBuilder);
 
   protected form: FormGroup; 
@@ -32,7 +35,3 @@ this.form = this.formBuilder.group({
     }
     }
   }
-  
-
-
-
