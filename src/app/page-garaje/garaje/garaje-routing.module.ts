@@ -7,6 +7,8 @@ const routes: Routes = [
 
   {path: 'lista', component: ListComponent  },
   {path: 'form', component: FormComponent  },
+  { path: '', redirectTo: 'ListComponent', pathMatch: 'full' },
+  { path: '', redirectTo: 'FormComponent', pathMatch: 'full' },
 
 ];
 
