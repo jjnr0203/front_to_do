@@ -52,28 +52,37 @@
 </div>
 
 
-<div class="container">
-  <div class="card mb-4">
-    <div class="card-body">
-      <h1 class="card-title">Listado de Autos</h1>
-      <div *ngFor="let auto of autos" class="card">
+<div>
+  <h1>Listado de Autos</h1>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let auto of autos">
+      <div class="card mb-3">
         <div class="card-body">
-          <p class="card-text">{{ auto.marca }} - {{ auto.modelo }} - {{ auto.anioA }} - {{ auto.color }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-      <h1 class="card-title">Listado de Motos</h1>
-      <div *ngFor="let moto of motos" class="card">
-        <div class="card-body">
-          <p class="card-text">{{ moto.marca }} - {{ moto.modelo }} - {{ moto.anioM }} - {{ moto.color }}</p>
+          <h5 class="card-title">{{ auto.marca }}</h5>
+          <p class="card-text"><strong>Modelo:</strong> {{ auto.modelo }}</p>
+          <p class="card-text"><strong>Año:</strong> {{ auto.anioA }}</p>
+          <p class="card-text"><strong>Color:</strong> {{ auto.color }}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div>
+  <h1>Listado de Motos</h1>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let moto of motos">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ moto.marca }}</h5>
+          <p class="card-text"><strong>Modelo:</strong> {{ moto.modelo }}</p>
+          <p class="card-text"><strong>Año:</strong> {{ moto.anioM }}</p>
+          <p class="card-text"><strong>Color:</strong> {{ moto.color }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
