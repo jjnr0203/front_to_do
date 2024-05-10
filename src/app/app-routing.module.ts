@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageDeportesModule } from './page-deportes/page-deportes.module';
 import { PageMuseumModule } from './page-museum/page-museum.module';
 import { PageGarajeModule } from './page-garaje/page-garaje.module';
+import { MainComponent } from '../app/main/main.component';
 
 
 const routes: Routes =
@@ -21,7 +22,11 @@ const routes: Routes =
 },
 
    { path: 'gamehub', loadChildren:() => import('./gamehub/gamehub.module').then(m => m.GamehubModule), },
-   { path: 'garaje', loadChildren:() => import('./page-garaje/page-garaje.module').then(m => m.PageGarajeModule), }
+   { path: 'page-garaje', loadChildren:() => import('./page-garaje/page-garaje.module').then(m => m.PageGarajeModule), },
+   {path: 'main', component: MainComponent  },
+   {path: 'page-garaje', component: PageGarajeModule  },
+   { path: '', redirectTo: 'MainComponent', pathMatch: 'full' },
+  { path: '', redirectTo: 'MainComponent', pathMatch: 'full' },
 ];
 
 @NgModule({
