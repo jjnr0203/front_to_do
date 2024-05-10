@@ -12,22 +12,22 @@
         }
       </div>
       <div class="form-group p-2">
-        <label for="lastname">Apellido:</label>
-        <input type="text" class="form-control"  id="lastname" formControlName="lastname" placeholder="Ingrese su apellido" maxlength="10">
-        @if (this.form.controls['lastname'].hasError('required')&& this.form.controls['lastname'].touched) {
+        <label for="lastName">Apellido:</label>
+        <input type="text" class="form-control"  id="lastName" formControlName="lastName" placeholder="Ingrese su apellido" maxlength="10">
+        @if (this.form.controls['lastName'].hasError('required')&& this.form.controls['lastName'].touched) {
           <small class="alert-validation" style="color: red;"> este campo es requerido</small>}
       </div>
       <div class="form-group p-2">
-        <label for="numberofrooms">Numero de salas:</label>
-        <input type="number" class="form-control" id="numberofrooms" formControlName="numberofrooms">
-        @if (this.form.controls['numberofrooms'].hasError('required')&& this.form.controls['numberofrooms'].touched) {
+        <label for="numberRooms">Numero de salas:</label>
+        <input type="number" class="form-control" id="numberRooms" formControlName="numberRooms">
+        @if (this.form.controls['numberRooms'].hasError('required')&& this.form.controls['numberRooms'].touched) {
           <small class="alert-validation" style="color: red;"> este campo es requerido</small>
         }
       </div>
       <div class="form-group p-2">
-        <label for="years">Año de Fundacion:</label>
-        <input type="date" class="form-control" id="years" formControlName="years">
-        @if (this.form.controls['years'].hasError('required')&& this.form.controls['years'].touched) {
+        <label for="year">Año de Fundacion:</label>
+        <input type="date" class="form-control" id="year" formControlName="year">
+        @if (this.form.controls['year'].hasError('required')&& this.form.controls['year'].touched) {
           <small class="alert-validation" style="color: red;"> este campo es requerido</small>
         }
       </div>
@@ -35,18 +35,18 @@
         <label for="">Pet Friendly?</label>
         <br>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="petfriendly">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="petFriendly">
         <label class="form-check-label" for="flexCheckDefault">
           Si
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="petfriendly">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="petFriendly">
         <label class="form-check-label" for="flexCheckChecked">
           No
         </label>
       </div>
-      @if (this.form.controls['petfriendly'].hasError('required') && this.form.controls['petfriendly'].touched) {
+      @if (this.form.controls['petFriendly'].hasError('required') && this.form.controls['petFriendly'].touched) {
         <small class="alert-validation" style="color: red;"> este campo es requerido</small>
       }
     </div>
