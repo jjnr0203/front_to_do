@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PageVehiculosComponent } from './page-vehiculos.component';
 
-describe('PageVehiculosComponent', () => {
-  let component: PageVehiculosComponent;
-  let fixture: ComponentFixture<PageVehiculosComponent>;
+import { ListComponent } from './list.component';
+
+describe('ListComponent', () => {
+  let component: ListComponent;
+  let fixture: ComponentFixture<ListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PageVehiculosComponent]
+      declarations: [ListComponent]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(PageVehiculosComponent);
+    
+    fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
