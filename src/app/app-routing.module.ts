@@ -26,7 +26,7 @@ const routes: Routes =
    {path: 'main', component: MainComponent  },
    {path: 'page-garaje', component: PageGarajeModule  },
    { path: '', redirectTo: 'MainComponent', pathMatch: 'full' },
-  { path: '', redirectTo: 'MainComponent', pathMatch: 'full' },
+
 ];
 
 @NgModule({

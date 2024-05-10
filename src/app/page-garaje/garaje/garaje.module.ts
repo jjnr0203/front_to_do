@@ -4,13 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { GarajeRoutingModule } from './garaje-routing.module';
 import { ListComponent } from './list/list.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from '../garaje/form/form.component';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     FormComponent
+
   ],
   imports: [
     CommonModule,

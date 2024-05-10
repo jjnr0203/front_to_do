@@ -1,43 +1,79 @@
-<p>main works!</p>
-<br>
-<form [formGroup]="autoForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="marca">Marca:</label>
-    <input type="text" id="marca" formControlName="marca">
+<div>
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h1 class="card-title">Formulario de Autos</h1>
+      <form [formGroup]="autoForm" (ngSubmit)="onSubmit('auto')">
+        <div class="form-group">
+          <label for="marcaAuto">Marca:</label>
+          <input type="text" id="marcaAuto" formControlName="marca" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="modeloAuto">Modelo:</label>
+          <input type="text" id="modeloAuto" formControlName="modelo" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="anioAuto">Año:</label>
+          <input type="text" id="anioAuto" formControlName="anioA" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="colorAuto">Color:</label>
+          <input type="text" id="colorAuto" formControlName="color" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Auto</button>
+      </form>
+    </div>
   </div>
-  <div>
-    <label for="modelo">Modelo:</label>
-    <input type="text" id="modelo" formControlName="modelo">
-  </div>
-  <div>
-    <label for="año">Año:</label>
-    <input type="number" id="año" formControlName="año">
-  </div>
-  <div>
-    <label for="color">Color:</label>
-    <input type="text" id="color" formControlName="color">
-  </div>
-  <button type="submit" [disabled]="autoForm.invalid">Guardar</button>
-</form>
 
-<br>
-<form [formGroup]="motoForm" (ngSubmit)="onSubmit()" class="container mt-4">
-  <div class="form-group">
-    <label for="marca">Marca:</label>
-    <input type="text" id="marca" class="form-control" formControlName="marca">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Formulario de Motos</h1>
+      <form [formGroup]="motoForm" (ngSubmit)="onSubmit('moto')">
+        <div class="form-group">
+          <label for="marcaMoto">Marca:</label>
+          <input type="text" id="marcaMoto" formControlName="marca" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="modeloMoto">Modelo:</label>
+          <input type="text" id="modeloMoto" formControlName="modelo" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="anioMoto">Año:</label>
+          <input type="text" id="anioMoto" formControlName="anioM" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="colorMoto">Color:</label>
+          <input type="text" id="colorMoto" formControlName="color" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Moto</button>
+      </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="modelo">Modelo:</label>
-    <input type="text" id="modelo" class="form-control" formControlName="modelo">
-  </div>
-  <div class="form-group">
-    <label for="año">Año:</label>
-    <input type="number" id="año" class="form-control" formControlName="año">
-  </div>
-  <div class="form-group">
-    <label for="color">Color:</label>
-    <input type="text" id="color" class="form-control" formControlName="color">
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="motoForm.invalid">Guardar</button>
-</form>
+</div>
 
+
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h1 class="card-title">Listado de Autos</h1>
+      <div *ngFor="let auto of autos" class="card">
+        <div class="card-body">
+          <p class="card-text">{{ auto.marca }} - {{ auto.modelo }} - {{ auto.anioA }} - {{ auto.color }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Listado de Motos</h1>
+      <div *ngFor="let moto of motos" class="card">
+        <div class="card-body">
+          <p class="card-text">{{ moto.marca }} - {{ moto.modelo }} - {{ moto.anioM }} - {{ moto.color }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

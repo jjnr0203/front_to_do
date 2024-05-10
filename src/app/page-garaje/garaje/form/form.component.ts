@@ -1,32 +1,43 @@
-import { Component } from '@angular/core';
-
-class Automovil {
-  marca: string | undefined;
-  modelo: string | undefined;
-  anio: number | undefined;
-  color: string | undefined;
-
-  constructor(marca: string, modelo: string, anio: number, color: string) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.anio = anio;
-    this.color = color;
-  }
-}
-
-@Component({
+import {Component, OnInit } from '@angular/core';
+/*import { FormBuilder, FormGroup, Validators } from '@angular/forms';*/
+export @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
-  automovil: Automovil = new Automovil('', '', 0, ''); // Inicialización del objeto Automovil con valores predeterminados
-auto: any;
-
-  constructor() {}
-
-  onSubmit(): void {
-    console.log('Automóvil guardado:', this.automovil);
-    // Puedes realizar otras acciones aquí, como enviar los datos a un servidor
+class FormComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+/*
+  autoForm!: FormGroup;
+  motoForm!: FormGroup;
+
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.motoForm = this.fb.group({
+      marca: ['', Validators.required],
+      modelo: ['', Validators.required],
+      año: ['', Validators.required],
+      color: ['', Validators.required]
+    });
+    this.autoForm = this.fb.group({
+      marca: ['', Validators.required],
+      modelo: ['', Validators.required],
+      año: ['', Validators.required],
+      color: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    if (this.motoForm.valid) {
+      // Manejar la lógica del formulario aquí
+      console.log(this.motoForm.value);
+    }
+    if (this.autoForm.valid) {
+      console.log(this.autoForm.value);
+    }
+
+  }*/
 }
