@@ -23,6 +23,7 @@
 
             <label for="name" class="form-label">Nombre de mi playlist</label>
             <input type="text" id="name" formControlName="name" class="form-control"/>
+            {{name.value}}
   
           </div>
 
@@ -35,22 +36,25 @@
           <div class="col-6 me-auto" style="margin-top: 20px">
             <label for="date" class="form-label">Fecha</label>
             <input type="date" id="date" class="form-control" formControlName="date" />
+            {{date.value}}
           </div>
   
           <div class="col-6 me-auto" style="margin-top: 20px">
-            <label for="artista" class="form-label">Artista</label>
-            <input type="text" id="artista" class="form-control" formControlName="artista" />
-  
+            <label for="artist" class="form-label">Artista</label>
+            <input type="text" id="artist" class="form-control" formControlName="artist" />
+            {{artist.value}}
           </div>
   
           <div class="col-6 me-auto" style="margin-top: 20px">
-            <label for="descripcion" class="form-label">Descripcion</label>
-            <input type="text" id="descripcion" class="form-control" formControlName="descripcion" />
+            <label for="description" class="form-label">Descripcion</label>
+            <input type="text" id="description" class="form-control" formControlName="description" />
+            {{description.value}}
           </div>
 
           <div class="col-6 me-auto" style="margin-top: 20px">
             <label for="num" class="form-label">Numero</label>
             <input type="number" id="num" class="form-control" formControlName="num" />
+            {{num.value}}
           </div>
   
           <div class="col-6 me-auto" style="margin-top: 20px">
