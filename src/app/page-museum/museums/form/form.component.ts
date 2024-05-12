@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder,AbstractControl,FormGroup, Validators } from '@angular/forms';
+import { FormBuilder,AbstractControl,FormGroup, Validators, MinLengthValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -18,11 +18,12 @@ export class FormComponent {
   }
 
   get formBuild(): FormGroup {
-    return this.formBuilder.group({ name: [null, [Validators.required]],
-      lastName: [null,[Validators.required]],
-      numberRooms:[null,Validators.required],
-      year:[null,Validators.required],
-      petFriendly:[null,Validators.required]
+    return this.formBuilder.group
+    ({ name: [null, [Validators.required, Validators.minLength(3)]],
+      lastName: [null,[Validators.required, Validators.minLength(3)]],
+      numberRooms:[null,[Validators.required, Validators.min(1), Validators.max(10)]],
+      year:[null,[Validators.required, Validators.max(2024-5-31)]],
+      petFriendly:[false,Validators.requiredTrue]
     })
 
   }

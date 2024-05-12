@@ -6,29 +6,53 @@
     <form [formGroup]="form">
       <div class="form-group p-2">
         <label for="name">Nombre:</label>
-        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre" maxlength="10">
-        @if (this.form.controls['name'].hasError('required') && this.form.controls['name'].touched) {
-          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre">
+        @if (nameField.errors) {
+          @if (nameField.errors['required'] && nameField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (nameField.errors['minlength']) {
+            <small style="color: red;">lo minimo son 3 letras</small>
+          }
         }
       </div>
       <div class="form-group p-2">
         <label for="lastName">Apellido:</label>
-        <input type="text" class="form-control"  id="lastName" formControlName="lastName" placeholder="Ingrese su apellido" maxlength="10">
-        @if (this.form.controls['lastName'].hasError('required')&& this.form.controls['lastName'].touched) {
-          <small class="alert-validation" style="color: red;"> este campo es requerido</small>}
+        <input type="text" class="form-control"  id="lastName" formControlName="lastName" placeholder="Ingrese su apellido">
+        @if (lastNameField.errors) {
+          @if (lastNameField.errors['required'] && lastNameField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (lastNameField.errors['minlength']) {
+            <small style="color: red;">lo minimo son 3 letras</small>
+          }
+        }
       </div>
       <div class="form-group p-2">
         <label for="numberRooms">Numero de salas:</label>
         <input type="number" class="form-control" id="numberRooms" formControlName="numberRooms">
-        @if (this.form.controls['numberRooms'].hasError('required')&& this.form.controls['numberRooms'].touched) {
-          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        @if (numberRoomsField.errors) {
+          @if (numberRoomsField.errors['required'] && numberRoomsField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (numberRoomsField.errors['min']) {
+            <small style="color: red;">el numero debe ser mayor a 0</small>
+          }
+          @if (numberRoomsField.errors['max']) {
+            <small style="color: red;">el numero debe ser menor o igual a 10</small>
+          }
         }
       </div>
       <div class="form-group p-2">
-        <label for="year">Año de Fundacion:</label>
+        <label for="year">Fecha de visita:</label>
         <input type="date" class="form-control" id="year" formControlName="year">
-        @if (this.form.controls['year'].hasError('required')&& this.form.controls['year'].touched) {
-          <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+        @if (yearField.errors) {
+          @if (yearField.errors['required'] && yearField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (yearField.errors['max']) {
+            <small style="color: red;">lo minimo es 2024-5-31</small>
+          }
         }
       </div>
       <div class="form-group">
@@ -46,8 +70,10 @@
           No
         </label>
       </div>
-      @if (this.form.controls['petFriendly'].hasError('required') && this.form.controls['petFriendly'].touched) {
-        <small class="alert-validation" style="color: red;"> este campo es requerido</small>
+      @if (petFriendlyField.errors) {
+        @if (petFriendlyField.errors['required'] && petFriendlyField.touched) {
+          <small style="color: red;">el campo es requerido</small>
+        }
       }
     </div>
       <div class="d-flex justify-content-center pt-4">
