@@ -1,6 +1,10 @@
 import { NgModule, createComponent } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { ButtonModule } from 'primeng/button';
+import { MessagesModule } from 'primeng/messages';
 
 
 
@@ -16,7 +20,11 @@ import { CreateComponent } from './create/create.component';
   imports: [
     CommonModule,
     MusicRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CardModule,
+    InputNumberModule,
+    ButtonModule,
+    MessagesModule
   ]
 })
 export class MusicModule { }

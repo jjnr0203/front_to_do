@@ -13,6 +13,7 @@ import {
   styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent {
+  
   private formBuilder = inject(FormBuilder);
   //protected nameControl: FormControl = new FormControl<string>('');
   //protected artistaControl: FormControl = new FormControl<string>('');
