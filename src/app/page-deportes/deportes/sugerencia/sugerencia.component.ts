@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DeportesHttpService} from "../../../services/api/deportes-http.service";
 
 @Component({
   selector: 'app-sugerencia',
@@ -10,9 +11,12 @@ export class SugerenciaComponent {
   private formBuilder: FormBuilder = inject(FormBuilder)
   protected sugerencia : FormGroup
 
-
+  private deportesHttpService:DeportesHttpService = inject(DeportesHttpService);
+  id:any
   constructor(){
     this.sugerencia = this.formBuild
+    this.deportesHttpService.id = 5;
+    this.id = this.deportesHttpService.id;
 
     console.log(this.sugerencia)
     console.log(this.userField)
@@ -20,10 +24,10 @@ export class SugerenciaComponent {
 
   get formBuild(): FormGroup {
     return this.formBuilder.group({
-      user: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email] ],
+      user: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
+      email: ['', [Validators.required, Validators.email, Validators.pattern(/^.+@gmail\.com$/)] ],
       date: [new Date(), [Validators.required]],
-      state: [false, [Validators.required]],
+      state: [false, [Validators.required, ]],
       assessment: [0,[Validators.required]],
     })
   }
@@ -46,9 +50,9 @@ export class SugerenciaComponent {
 
   validate() {
     this.sugerencia.markAllAsTouched();
-    const data = this.sugerencia.value
     if(this.sugerencia.valid){
       alert('Formulario enviado');
+      console.log(this.sugerencia.valid)
     }else {
       alert('Revisa el formulario');
     }
