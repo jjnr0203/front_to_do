@@ -1,5 +1,8 @@
 import {Component, inject} from '@angular/core';
 import {DeportesHttpService} from "../../../services/api/deportes-http.service";
+import {FormGroup} from "@angular/forms";
+import {deportesModel} from "../../../models/deportes.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,13 @@ import {DeportesHttpService} from "../../../services/api/deportes-http.service";
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
+  protected categoriesDeportes : deportesModel[];
   private deportesHttpService:DeportesHttpService = inject(DeportesHttpService);
-  id:any;
+  private router:Router = inject(Router);
   constructor() {
-    this.id = this.deportesHttpService.id;
+    this.categoriesDeportes =this.deportesHttpService.categoriesDeportes;
+    console.log(this.categoriesDeportes);
   }
+
+
 }

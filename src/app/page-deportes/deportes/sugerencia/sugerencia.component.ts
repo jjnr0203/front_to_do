@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DeportesHttpService} from "../../../services/api/deportes-http.service";
+import {deportesModel} from "../../../models/deportes.model";
 
 @Component({
   selector: 'app-sugerencia',
@@ -11,15 +12,16 @@ export class SugerenciaComponent {
   private formBuilder: FormBuilder = inject(FormBuilder)
   protected sugerencia : FormGroup
 
+  categoryDeportes: deportesModel[] = []
   private deportesHttpService:DeportesHttpService = inject(DeportesHttpService);
-  id:any
+
   constructor(){
     this.sugerencia = this.formBuild
-    this.deportesHttpService.id = 5;
-    this.id = this.deportesHttpService.id;
+    this.categoryDeportes = this.deportesHttpService.categoriesDeportes;
+    this.sugerencia.setValue(this.deportesHttpService.categoriesDeportes)
 
-    console.log(this.sugerencia)
-    console.log(this.userField)
+    /* console.log(this.sugerencia)
+    console.log(this.userField) */
   }
 
   get formBuild(): FormGroup {
@@ -52,7 +54,7 @@ export class SugerenciaComponent {
     this.sugerencia.markAllAsTouched();
     if(this.sugerencia.valid){
       alert('Formulario enviado');
-      console.log(this.sugerencia.valid)
+      console.log(this.sugerencia.value)
     }else {
       alert('Revisa el formulario');
     }
