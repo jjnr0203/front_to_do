@@ -1,22 +1,21 @@
-<div class="container mt-3">
-    <h1>Lista de Usuarios</h1>
-
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>Usuario</th>
-          <th>Titulo</th>
-          <th>Descripcion</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{}}</td>
-          <td>Analisis de Champions</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolorem reiciendis laudantium natus quasi fugit ipsum, maiores, vero magnam corporis porro autem molestiae sapiente, quas repellendus tenetur harum nostrum. Ab.</td>
-          <td><b style="color: green;">APROBADO</b></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<h2>Lista</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Assessment</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (item of categories; track item.email){
+        <td>{{ item.user }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.state }}</td>
+        <td>{{ item.assessment }}</td>
+      }
+    </tbody>
+  </table>

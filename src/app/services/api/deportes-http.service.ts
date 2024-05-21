@@ -1,33 +1,33 @@
 import { Injectable } from '@angular/core';
-import {deportesModel} from "../../models/deportes.model";
+import { DeportesModel} from "../../models/deportes.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeportesHttpService {
-   public categoriesDeportes : deportesModel[];
-
+   public categories : DeportesModel[];
+   public category : DeportesModel = {};
   constructor() {
-    this.categoriesDeportes = [
+    this.categories = [
       {
-      user: '1',
-      email: 'algo@gmail.com',
+      user: 'JUAN',
+      email: 'juan@gmail.com',
       date: new Date(),
-      state: 0,
+      state: 10,
       assessment: true,
       },
       {
-        user: '10',
-        email: 'a2lgo@gmail.com',
+        user: 'CARLOS',
+        email: 'carlos@gmail.com',
         date: new Date(),
-        state: 0,
-        assessment: true,
+        state: 20,
+        assessment: false,
       },
       {
-        user: '11',
-        email: 'algo@gmail.com',
+        user: 'HERNAN',
+        email: 'hernan@gmail.com',
         date: new Date(),
-        state: 0,
+        state: 30,
         assessment: true,
       }]
 

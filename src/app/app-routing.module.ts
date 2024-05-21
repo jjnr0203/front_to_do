@@ -14,8 +14,9 @@ const routes: Routes =
   },
    {
     path: 'page-deportes',
-    loadChildren: () => import('./page-deportes/page-deportes.module').then(m => PageDeportesModule)
-  },
+
+    loadChildren: () => import('./page-deportes/page-deportes.module').then(() => PageDeportesModule)
+  }
      {
   path:'page-museum',
   loadChildren: ()=> import('./page-museum/page-museum.module').then(m=>PageMuseumModule)
@@ -26,6 +27,7 @@ const routes: Routes =
    {path: 'main', component: MainComponent  },
    {path: 'page-garaje', component: PageGarajeModule  },
    { path: '', redirectTo: 'MainComponent', pathMatch: 'full' },
+
 
 ];
 
