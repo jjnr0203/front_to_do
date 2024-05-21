@@ -1,7 +1,7 @@
-export interface deportesModel {
-  user: string,
-  email: string,
-  date: Date,
-  state: 0,
-  assessment: boolean;
+export interface DeportesModel{
+  user?: string,
+  email?: string,
+  date?: Date,
+  state?: number,
+  assessment?: boolean;
 }

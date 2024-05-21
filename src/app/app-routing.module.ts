@@ -5,7 +5,7 @@ import { PageDeportesModule } from './page-deportes/page-deportes.module';
 const routes: Routes = [
   {
     path: 'page-deportes',
-    loadChildren: () => import('./page-deportes/page-deportes.module').then(m => PageDeportesModule)
+    loadChildren: () => import('./page-deportes/page-deportes.module').then(() => PageDeportesModule)
   }
 ];
 
