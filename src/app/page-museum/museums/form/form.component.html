@@ -1,0 +1,84 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="col-6 position-absolute top-50 start-50 translate-middle">
+  <div class="border border-dark-subtle p-4 rounded-4">
+    <h2 class="mt-4 mb-4">Registro de Museos </h2>
+
+    <form [formGroup]="form">
+      <div class="form-group p-2">
+        <label for="name">Nombre:</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre">
+        @if (nameField.errors) {
+          @if (nameField.errors['required'] && nameField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (nameField.errors['minlength']) {
+            <small style="color: red;">lo minimo son 3 letras</small>
+          }
+        }
+      </div>
+      <div class="form-group p-2">
+        <label for="lastName">Apellido:</label>
+        <input type="text" class="form-control"  id="lastName" formControlName="lastName" placeholder="Ingrese su apellido">
+        @if (lastNameField.errors) {
+          @if (lastNameField.errors['required'] && lastNameField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (lastNameField.errors['minlength']) {
+            <small style="color: red;">lo minimo son 3 letras</small>
+          }
+        }
+      </div>
+      <div class="form-group p-2">
+        <label for="numberRooms">Numero de salas:</label>
+        <input type="number" class="form-control" id="numberRooms" formControlName="numberRooms">
+        @if (numberRoomsField.errors) {
+          @if (numberRoomsField.errors['required'] && numberRoomsField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (numberRoomsField.errors['min']) {
+            <small style="color: red;">el numero debe ser mayor a 0</small>
+          }
+          @if (numberRoomsField.errors['max']) {
+            <small style="color: red;">el numero debe ser menor o igual a 10</small>
+          }
+        }
+      </div>
+      <div class="form-group p-2">
+        <label for="year">Fecha de visita:</label>
+        <input type="date" class="form-control" id="year" formControlName="year">
+        @if (yearField.errors) {
+          @if (yearField.errors['required'] && yearField.touched) {
+            <small style="color: red;">el campo es requerido</small>
+          }
+          @if (yearField.errors['max']) {
+            <small style="color: red;">lo minimo es 2024-5-31</small>
+          }
+        }
+      </div>
+      <div class="form-group">
+        <label for="">Pet Friendly?</label>
+        <br>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="petFriendly">
+        <label class="form-check-label" for="flexCheckDefault">
+          Si
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="petFriendly">
+        <label class="form-check-label" for="flexCheckChecked">
+          No
+        </label>
+      </div>
+      @if (petFriendlyField.errors) {
+        @if (petFriendlyField.errors['required'] && petFriendlyField.touched) {
+          <small style="color: red;">el campo es requerido</small>
+        }
+      }
+    </div>
+      <div class="d-flex justify-content-center pt-4">
+        <button type="button" (click)="validateForm()" class="btn btn-primary">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
