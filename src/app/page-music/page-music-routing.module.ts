@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  { path: 'gamezone', loadChildren:() => import('./gamezone/gamezone.module').then(m => m.GamezoneModule), }
+const routes: Routes = 
+[
+  {
+    path:'pages-music',
+    loadChildren: () => import('./music/music.module').then(m => m.MusicModule)
+
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class GamehubRoutingModule { }
+export class PageMusicRoutingModule { }

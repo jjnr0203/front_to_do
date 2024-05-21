@@ -1,0 +1,88 @@
+<div>
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h1 class="card-title">Formulario de Autos</h1>
+      <form [formGroup]="autoForm" (ngSubmit)="onSubmit('auto')">
+        <div class="form-group">
+          <label for="marcaAuto">Marca:</label>
+          <input type="text" id="marcaAuto" formControlName="marca" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="modeloAuto">Modelo:</label>
+          <input type="text" id="modeloAuto" formControlName="modelo" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="anioAuto">Año:</label>
+          <input type="text" id="anioAuto" formControlName="anioA" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="colorAuto">Color:</label>
+          <input type="text" id="colorAuto" formControlName="color" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Auto</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Formulario de Motos</h1>
+      <form [formGroup]="motoForm" (ngSubmit)="onSubmit('moto')">
+        <div class="form-group">
+          <label for="marcaMoto">Marca:</label>
+          <input type="text" id="marcaMoto" formControlName="marca" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="modeloMoto">Modelo:</label>
+          <input type="text" id="modeloMoto" formControlName="modelo" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="anioMoto">Año:</label>
+          <input type="text" id="anioMoto" formControlName="anioM" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="colorMoto">Color:</label>
+          <input type="text" id="colorMoto" formControlName="color" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Moto</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <h1>Listado de Autos</h1>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let auto of autos">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ auto.marca }}</h5>
+          <p class="card-text"><strong>Modelo:</strong> {{ auto.modelo }}</p>
+          <p class="card-text"><strong>Año:</strong> {{ auto.anioA }}</p>
+          <p class="card-text"><strong>Color:</strong> {{ auto.color }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <h1>Listado de Motos</h1>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let moto of motos">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ moto.marca }}</h5>
+          <p class="card-text"><strong>Modelo:</strong> {{ moto.modelo }}</p>
+          <p class="card-text"><strong>Año:</strong> {{ moto.anioM }}</p>
+          <p class="card-text"><strong>Color:</strong> {{ moto.color }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
