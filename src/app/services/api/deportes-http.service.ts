@@ -10,7 +10,7 @@ export class DeportesHttpService {
   constructor() {
     this.categories = [
       {
-      user: 'JUAN',
+      user: 'JUANA',
       email: 'juan@gmail.com',
       date: new Date(),
       state: 10,

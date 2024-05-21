@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class ListComponent {
   protected categories : DeportesModel[];
-  private deportesHttpService:DeportesHttpService = inject(DeportesHttpService);
+  protected deportesHttpService:DeportesHttpService = inject(DeportesHttpService);
   private router:Router = inject(Router);
   constructor() {
     this.categories = this.deportesHttpService.categories;
@@ -18,6 +18,7 @@ export class ListComponent {
   }
 
   edit(item: DeportesModel){
-
+    this.deportesHttpService.category = item
+    this.router.navigate(['page-deportes/deportes/sugerencia/', item.user])
   }
 }

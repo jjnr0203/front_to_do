@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DeportesModel} from "../../../models/deportes.model";
 import {DeportesHttpService} from "../../../services/api/deportes-http.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,16 +11,16 @@ import {DeportesHttpService} from "../../../services/api/deportes-http.service";
   styleUrl: './sugerencia.component.scss'
 })
 export class SugerenciaComponent {
-  private formBuilder: FormBuilder = inject(FormBuilder)
   protected sugerencia : FormGroup
+  private formBuilder: FormBuilder = inject(FormBuilder)
 
   category: DeportesModel;
   private deportesHttpService:DeportesHttpService = inject(DeportesHttpService);
-
+  private router:Router = inject(Router);
   constructor(){
     this.sugerencia = this.formBuild
     this.category = this.deportesHttpService.category;
-    this.sugerencia.patchValue(this.deportesHttpService.category);
+    this.sugerencia.setValue(this.category);
 
      console.log(this.sugerencia)
     console.log(this.userField)
