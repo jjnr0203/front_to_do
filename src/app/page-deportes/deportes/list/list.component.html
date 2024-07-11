@@ -1,21 +1,24 @@
 <h2>Lista</h2>
-  <table>
-    <thead>
+<table class="table table-striped"> <thead>
     <tr>
       <th>User</th>
       <th>Email</th>
       <th>Date</th>
       <th>Status</th>
       <th>Assessment</th>
+      <th>Editar</th>
     </tr>
-    </thead>
-    <tbody>
-      @for (item of categories; track item.email){
+  </thead>
+  <tbody>
+    @for (item of categories; track item.email){
+      <tr>
         <td>{{ item.user }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.date }}</td>
         <td>{{ item.state }}</td>
         <td>{{ item.assessment }}</td>
-      }
-    </tbody>
-  </table>
+        <td><button (click)="edit(item)">Editar</button> </td>
+      </tr>
+    }
+  </tbody>
+</table>
